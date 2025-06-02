@@ -39,7 +39,7 @@ Simple CRUD API for Animal Objects using Spring Boot and JPA (Hibernate).
 ## API Endpoints
 Base URL: [`http://localhost:8080/animals`](http://localhost:8080/animals)
 
-### [`/`](http://localhost:8080/animals) (GET)
+1. ### [`/`](http://localhost:8080/animals) (GET)
 
 Returns a list of all animals in the database.
 
