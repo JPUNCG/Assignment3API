@@ -10,7 +10,7 @@ public interface AnimalRepository extends JpaRepository<Animal, Long> {
 
     List<Animal> getAnimalsBySpecies(String species);
 
-    @Query(value = "select * from animals a where a.name like %?1% ", nativeQuery = true)
+    @Query(value = "SELECT * FROM animals a WHERE LOWER(a.name) LIKE LOWER(CONCAT('%', ?1, '%'))", nativeQuery = true)
     List<Animal> getAnimalsByName(String name);
 
     @Query(value = "select * from animals a where a.source like %?1% ", nativeQuery = true)

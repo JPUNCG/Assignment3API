@@ -42,14 +42,16 @@ public class AnimalController {
      */
     @GetMapping("/animals/name")
     public Object getAnimalsByName(@RequestParam String key, Model model) {
-        if (key != null) {
+        if (key != null && !key.isEmpty()) {
             model.addAttribute("animalsList", animalService.getAnimalsByName(key));
             model.addAttribute("title", "Animals By Name: " + key);
+            model.addAttribute("key", key);
             return "animals-list";
         } else {
-            return "redirect:/animals/";
+            return "redirect:/animals";
         }
     }
+
 
     /**
      * Endpoint to get animals by species
@@ -117,7 +119,7 @@ public class AnimalController {
     @GetMapping("/animals/delete/{id}")
     public Object deleteAnimal(@PathVariable Long id) {
         animalService.deleteAnimal(id);
-        return "redirect:/animals/";
+        return "redirect:/animals";
     }
 
     /**

@@ -16,23 +16,34 @@ public class Animal {
     private String description;
     private String species;
     private String source;
+    private String imageUrl;
 
     public Animal() {
     }
 
-    public Animal(Long animalId, String name, String description, String species, String source) {
-        this.animalId = animalId;
-        this.name = name;
-        this.description = description;
-        this.species = species;
-        this.source = source;
+    public Animal(Long animalId, String name, String description, String species, String source, String imageUrl) {
+    this.animalId = animalId;
+    this.name = name;
+    this.description = description;
+    this.species = species;
+    this.source = source;
+    this.imageUrl = imageUrl;
     }
 
-    public Animal( String name, String description, String species, String source) {
+    public Animal(String name, String description, String species, String source, String imageUrl) {
         this.name = name;
         this.description = description;
         this.species = species;
         this.source = source;
+        this.imageUrl = imageUrl;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 
     public Long getAnimalId() {
